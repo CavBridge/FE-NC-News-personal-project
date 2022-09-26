@@ -1,9 +1,9 @@
 import { fetchArticles } from "../Utils/Api";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Homepage = () => {
   const [articlesData, setArticlesData] = useState([]);
-  console.log(articlesData);
   useEffect(() => {
     fetchArticles().then((articlesFromApi) => {
       setArticlesData(articlesFromApi.articles);
@@ -12,6 +12,23 @@ const Homepage = () => {
 
   return (
     <>
+      <div className="topicarticles__buton--parent">
+        <Link to="/articlesdata/coding">
+          <button className="topicarticles__button--child-coding">
+            Coding
+          </button>
+        </Link>
+        <Link to="articlesdata/football">
+          <button className="topicarticles__button--child-football">
+            Football
+          </button>
+        </Link>
+        <Link to="articlesdata/cooking">
+          <button className="topicarticles__button--child-cooking">
+            Cooking
+          </button>
+        </Link>
+      </div>
       <section className="homepage__all_articles">
         <div className="articledata_article">
           <ul>
