@@ -3,27 +3,27 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Homepage = () => {
-  const [articlesData, setArticlesData] = useState([]);
+  const [articles, setArticles] = useState([]);
   useEffect(() => {
     fetchArticles().then((articlesFromApi) => {
-      setArticlesData(articlesFromApi.articles);
+      setArticles(articlesFromApi.articles);
     });
   }, []);
 
   return (
     <>
       <div className="topicarticles__buton--parent">
-        <Link to="/articlesdata/coding">
+        <Link to="/articles/coding">
           <button className="topicarticles__button--child-coding">
             Coding
           </button>
         </Link>
-        <Link to="articlesdata/football">
+        <Link to="articles/football">
           <button className="topicarticles__button--child-football">
             Football
           </button>
         </Link>
-        <Link to="articlesdata/cooking">
+        <Link to="articles/cooking">
           <button className="topicarticles__button--child-cooking">
             Cooking
           </button>
@@ -32,7 +32,7 @@ const Homepage = () => {
       <section className="homepage__all_articles">
         <div className="articledata_article">
           <ul>
-            {articlesData.map((article) => {
+            {articles.map((article) => {
               return (
                 <li key={article.article_id}>
                   <h2 className="article__article_title">{article.title}</h2>

@@ -15,17 +15,17 @@ const Topics = () => {
   return (
     <>
       <div className="topicarticles__button--parent">
-        <Link to="/articlesdata/coding">
+        <Link to="/articles/coding">
           <button className="topicarticles__button--child-coding">
             Coding
           </button>
         </Link>
-        <Link to="/articlesdata/football">
+        <Link to="/articles/football">
           <button className="topicarticles__button--child-football">
             Football
           </button>
         </Link>
-        <Link to="/articlesdata/cooking">
+        <Link to="/articles/cooking">
           <button className="topicarticles__button--child-cooking">
             Cooking
           </button>
