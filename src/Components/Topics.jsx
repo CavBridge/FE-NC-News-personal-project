@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { fetchArticlesByTopic } from "../Utils/Api";
+import { fetchArticlesByTopic } from "../Utils/Api-requests";
 import { Link } from "react-router-dom";
 
 const Topics = () => {
