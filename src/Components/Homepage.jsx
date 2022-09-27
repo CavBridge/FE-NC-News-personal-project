@@ -35,7 +35,12 @@ const Homepage = () => {
             {articles.map((article) => {
               return (
                 <li key={article.article_id}>
-                  <h2 className="article__article_title">{article.title}</h2>
+                  <Link
+                    className="link_article"
+                    to={`/article/${article.article_id}`}
+                  >
+                    <h2 className="article__article_title">{article.title}</h2>
+                  </Link>
                   <h3 className="article__article_topic">
                     {" "}
                     Topic: {article.topic}
