@@ -7,7 +7,6 @@ const Article = () => {
   const { article_id } = useParams();
   useEffect(() => {
     fetchArticle(article_id).then((chosenArticle) => {
-      console.log(chosenArticle);
       setArticle(chosenArticle.article);
     });
   }, [article_id]);
