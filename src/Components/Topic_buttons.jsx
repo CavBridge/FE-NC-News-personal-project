@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function TopicsButton() {
+const TopicsButton = () => {
   return (
     <div className="topicarticles__buton--parent">
       <Link to="/articles/coding">
@@ -18,6 +18,6 @@ function TopicsButton() {
       </Link>
     </div>
   );
-}
+};
 
 export default TopicsButton;

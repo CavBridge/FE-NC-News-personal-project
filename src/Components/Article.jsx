@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchArticle } from "../Utils/Api-requests";
+import UpvoteDownvoteButtons from "./Article_votes";
 
 const Article = () => {
   const [article, setArticle] = useState({});
@@ -31,13 +32,11 @@ const Article = () => {
           <h3 className="article__single_article_created_at">
             Created at: {article.created_at}
           </h3>
-          <b className="article__single_article_votes">
-            Votes: {article.votes}
-          </b>
           <h3 className="article__single_article_comment_count">
             Comment count: {article.comment_count}
           </h3>
         </div>
+        <UpvoteDownvoteButtons votes={article.votes} />
       </>
     );
   }
