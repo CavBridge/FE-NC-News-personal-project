@@ -98,7 +98,7 @@ li {
   text-align: center;
 }
 
-.article__single_article_votes {
+.articlevotes__button--parent {
   grid-area: 5 / 1 / 6 / 2;
   font-family: "Play", sans-serif;
 }
@@ -106,6 +106,14 @@ li {
 .article__single_article_comment_count {
   grid-area: 5 / 2 / 6 / 3;
   font-family: "Play", sans-serif;
+}
+
+.upvoteClicked {
+  background-color: green;
+}
+
+.downvoteClicked {
+  background-color: red;
 }
 
 .link_article {
