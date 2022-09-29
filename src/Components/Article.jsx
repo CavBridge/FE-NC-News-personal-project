@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchArticle } from "../Utils/Api-requests";
 import UpvoteDownvoteButtons from "./Article_votes";
+import ArticleComments from "./Article_comments";
 
 const Article = () => {
   const [article, setArticle] = useState({});
@@ -37,6 +38,7 @@ const Article = () => {
           </h3>
           <UpvoteDownvoteButtons votes={article.votes} />
         </div>
+        <ArticleComments />
       </>
     );
   }
