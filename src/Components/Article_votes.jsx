@@ -6,32 +6,49 @@ const UpvoteDownvoteButtons = ({ votes }) => {
   const [vote, setVote] = useState(votes);
   const [upvoteCount, setUpvoteCount] = useState(0);
   const [downvoteCount, setDownvoteCount] = useState(0);
+  const [err, setErr] = useState(null);
   const { article_id } = useParams();
 
   const handleUpvote = () => {
     if (upvoteCount === 0) {
       setUpvoteCount(1);
-      patchVotes(article_id, vote + 1);
       setVote(vote + 1);
+      setErr(null);
+      patchVotes(article_id, vote + 1).catch((err) => {
+        setVote(vote - 1);
+        setErr("Something went wrong, please try again");
+      });
     } else {
       setUpvoteCount(0);
-      patchVotes(article_id, vote - 1);
       setVote(vote - 1);
+      setErr(null);
+      patchVotes(article_id, vote - 1).catch((err) => {
+        setVote(vote + 1);
+        setErr("Something went wrong, please try again");
+      });
     }
   };
-
   const handleDownvote = () => {
     if (downvoteCount === 0) {
       setDownvoteCount(-1);
-      patchVotes(article_id, vote - 1);
       setVote(vote - 1);
+      setErr(null);
+      patchVotes(article_id, vote + 1).catch((err) => {
+        setVote(vote + 1);
+        setErr("Something went wrong, please try again");
+      });
     } else {
       setDownvoteCount(0);
-      patchVotes(article_id, vote + 1);
       setVote(vote + 1);
+      setErr(null);
+      patchVotes(article_id, vote + 1).catch((err) => {
+        setVote(vote - 1);
+        setErr("Something went wrong, please try again");
+      });
     }
   };
 
+  if (err) return <p className="articlevotes__error-message">{err}</p>;
   return (
     <div className="articlevotes__button--parent">
       <button
