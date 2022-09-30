@@ -16,7 +16,7 @@ const ArticleComments = () => {
       })
       .catch((err) => {
         setErr(
-          "Sorry something went wrong, could not load comments. please try again"
+          "Sorry something went wrong, could not load comments. Please try again"
         );
       });
   }, [article_id]);
@@ -48,7 +48,7 @@ const ArticleComments = () => {
             <div className="articlecomments">
               {backendComments.map((articleComment) => {
                 return (
-                  <li key={articleComment.article_id}>
+                  <li key={articleComment.comment_id}>
                     <p className="articlecomments__comment_author">
                       {" "}
                       Author :{articleComment.author}
@@ -62,7 +62,7 @@ const ArticleComments = () => {
                     </p>
                     <p className="articlecomments__comment_created_at">
                       {" "}
-                      Created at: {articleComment.created_at}
+                      Created at: {articleComment.created_at.slice(0, 10)}
                     </p>
                   </li>
                 );
