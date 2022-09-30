@@ -1,6 +1,7 @@
 import { fetchArticles } from "../Utils/Api-requests";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import React from "react";
 
 const Homepage = () => {
   const [articles, setArticles] = useState([]);
@@ -11,6 +12,9 @@ const Homepage = () => {
       setIsLoading(false);
     });
   }, []);
+
+  // const formattedDate =
+  // Moment(article.created_at).format("DD/MM/YYYY HH:mm");
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -39,7 +43,7 @@ const Homepage = () => {
                       Author: {article.author}
                     </h3>
                     <h3 className="article__article_created_at">
-                      Created at: {article.created_at}
+                      Created at: {article.created_at.slice(0, 10)}
                     </h3>
                     <b className="article__article_votes">
                       Votes: {article.votes}

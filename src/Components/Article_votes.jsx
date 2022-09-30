@@ -35,7 +35,9 @@ const UpvoteDownvoteButtons = ({ votes }) => {
       setErr(null);
       patchVotes(article_id, vote + 1).catch((err) => {
         setVote(vote + 1);
-        setErr("Something went wrong, please try again");
+        setErr(
+          "Sorry something went wrong, could not register vote. Please try again"
+        );
       });
     } else {
       setDownvoteCount(0);

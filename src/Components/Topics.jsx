@@ -38,7 +38,7 @@ const Topics = () => {
                     Author: {article.author}
                   </h3>
                   <h3 className="article__article_created_at">
-                    Created at: {article.created_at}
+                    Created at: {article.created_at.slice(0, 10)}
                   </h3>
                   <b className="article__article_votes">
                     Votes: {article.votes}
