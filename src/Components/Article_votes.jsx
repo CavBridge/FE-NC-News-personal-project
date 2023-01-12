@@ -16,7 +16,9 @@ const UpvoteDownvoteButtons = ({ votes }) => {
       setErr(null);
       patchVotes(article_id, vote + 1).catch((err) => {
         setVote(vote - 1);
-        setErr("Something went wrong, please try again");
+        setErr(
+          "Sorry something went wrong, could not register vote. Please try again"
+        );
       });
     } else {
       setUpvoteCount(0);
@@ -24,7 +26,9 @@ const UpvoteDownvoteButtons = ({ votes }) => {
       setErr(null);
       patchVotes(article_id, vote - 1).catch((err) => {
         setVote(vote + 1);
-        setErr("Something went wrong, please try again");
+        setErr(
+          "Sorry something went wrong, could not register vote. Please try again"
+        );
       });
     }
   };
@@ -33,7 +37,7 @@ const UpvoteDownvoteButtons = ({ votes }) => {
       setDownvoteCount(-1);
       setVote(vote - 1);
       setErr(null);
-      patchVotes(article_id, vote + 1).catch((err) => {
+      patchVotes(article_id, vote - 1).catch((err) => {
         setVote(vote + 1);
         setErr(
           "Sorry something went wrong, could not register vote. Please try again"
@@ -45,7 +49,9 @@ const UpvoteDownvoteButtons = ({ votes }) => {
       setErr(null);
       patchVotes(article_id, vote + 1).catch((err) => {
         setVote(vote - 1);
-        setErr("Something went wrong, please try again");
+        setErr(
+          "Sorry something went wrong, could not register vote. Please try again"
+        );
       });
     }
   };
@@ -54,7 +60,7 @@ const UpvoteDownvoteButtons = ({ votes }) => {
   return (
     <div className="articlevotes__button--parent">
       <button
-        className={`articlevotes__button--child-upvote ${
+        className={`articlevotes__button-upvote ${
           upvoteCount === 1 ? "upvoteClicked" : ""
         }`}
         onClick={handleUpvote}
@@ -63,7 +69,7 @@ const UpvoteDownvoteButtons = ({ votes }) => {
       </button>
       <b className="article__single_article_votes"> Votes: {vote}</b>
       <button
-        className={`articlevotes__button--child-downvote ${
+        className={`articlevotes__button-downvote ${
           downvoteCount === -1 ? "downvoteClicked" : ""
         }`}
         onClick={handleDownvote}

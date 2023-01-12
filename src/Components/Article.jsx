@@ -3,10 +3,15 @@ import { useParams } from "react-router-dom";
 import { fetchArticle } from "../Utils/Api-requests";
 import UpvoteDownvoteButtons from "./Article_votes";
 import ArticleComments from "./Article_comments";
+import AddComment from "./Add_comment";
+import CommentCount from "./Comment_count";
 
 const Article = () => {
   const [article, setArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [backendComments, setBackendComments] = useState([]);
+  const [newComment, setNewComment] = useState();
+  const [newCommentsAdded, setNewCommentsAdded] = useState(0);
   const { article_id } = useParams();
   useEffect(() => {
     fetchArticle(article_id).then((chosenArticle) => {
@@ -33,12 +38,25 @@ const Article = () => {
           <h3 className="article__single_article_created_at">
             Created at: {article.created_at.slice(0, 10)}
           </h3>
-          <h3 className="article__single_article_comment_count">
+          <CommentCount
+            comment_count={article.comment_count + newCommentsAdded}
+          />
+          {/* <h3 className="article__single_article_comment_count">
             Comment count: {article.comment_count}
-          </h3>
+          </h3> */}
           <UpvoteDownvoteButtons votes={article.votes} />
         </div>
-        <ArticleComments />
+        <AddComment
+          newComment={newComment}
+          setNewComment={setNewComment}
+          setBackendComments={setBackendComments}
+          currentCommentCount={article.comment_count}
+          setNewCommentsAdded={setNewCommentsAdded}
+        />
+        <ArticleComments
+          backendComments={backendComments}
+          setBackendComments={setBackendComments}
+        />
       </>
     );
   }

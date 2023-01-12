@@ -13,9 +13,6 @@ const Homepage = () => {
     });
   }, []);
 
-  // const formattedDate =
-  // Moment(article.created_at).format("DD/MM/YYYY HH:mm");
-
   if (isLoading) {
     return <p>Loading...</p>;
   } else {

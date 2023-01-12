@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchComments } from "../Utils/Api-requests";
 
-const ArticleComments = () => {
-  const [backendComments, setBackendComments] = useState([]);
+const ArticleComments = ({ backendComments, setBackendComments }) => {
   const [showComments, setShowComments] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [err, setErr] = useState(null);
@@ -62,7 +61,7 @@ const ArticleComments = () => {
                     </p>
                     <p className="articlecomments__comment_created_at">
                       {" "}
-                      Created at: {articleComment.created_at.slice(0, 10)}
+                      Created at: {articleComment.created_at}
                     </p>
                   </li>
                 );
