@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const newsApi = axios.create({
-  baseURL: "https://jade-good-moose.cyclic.app",
+  baseURL: "https://jade-good-moose.cyclic.app/api",
 });
 
 export const fetchArticles = () => {
