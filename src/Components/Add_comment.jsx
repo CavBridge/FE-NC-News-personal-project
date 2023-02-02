@@ -92,6 +92,4 @@ const AddComment = ({
   );
 };
 
-// add SORT_BY created_at ORDER desc to back end [insert comment]
-
 export default AddComment;
