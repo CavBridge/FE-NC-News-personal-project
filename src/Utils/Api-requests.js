@@ -42,10 +42,24 @@ export const postComment = (article_id, body, username) => {
     });
 };
 
+export const deleteComment = (comment_id) => {
+  return newsApi
+    .delete(`/comments/${comment_id}`)
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => {
+      throw err;
+    });
+};
+
 export const patchVotes = (article_id, votes) => {
   return newsApi
     .patch(`/articles/${article_id}`, { inc_votes: votes })
     .then((res) => {
       return res.data.article;
+    })
+    .catch((err) => {
+      throw err;
     });
 };
