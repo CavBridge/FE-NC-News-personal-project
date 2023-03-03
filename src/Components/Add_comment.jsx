@@ -45,10 +45,6 @@ const AddComment = ({
     setNewComment("");
   };
 
-  // if (isLoading) {
-  //   return <p>Loading...</p>;
-  // }
-
   if (err) {
     return (
       <p className="article-comment-post__error-message">
