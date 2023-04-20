@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  background-color: rgb(137, 216, 236);
+  padding-top: 30px;
+  padding-bottom: 200px;
 }
 
 .App-logo {
@@ -36,7 +39,7 @@
     transform: rotate(360deg);
   }
 }
-
+/* HEADER */
 .header > h1 {
   color: black;
   text-decoration: underline;
@@ -46,8 +49,12 @@
 .link_header {
   text-decoration: none;
   color: black;
+  font-family: "Permanent Marker", cursive;
+  font-size: 25px;
 }
+/* HEADER */
 
+/* ARTICLE */
 li {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -69,7 +76,22 @@ li {
   margin-right: 30px;
   border: 2px;
   border-style: ridge;
-  border-radius: 7%;
+  border-radius: 10%;
+  margin-top: 20px;
+  margin-left: 30px;
+  background-color: rgb(213, 162, 239);
+}
+
+.unique_article {
+  margin-top: 10px;
+  background-color: rgb(213, 162, 239);
+  border-radius: 15%;
+}
+
+.related_articles {
+  margin-top: 10px;
+  background-color: rgb(213, 162, 239);
+  border-radius: 15%;
 }
 
 .article__single_article_title {
@@ -116,13 +138,87 @@ li {
   background-color: red;
 }
 
-/* .articlecomments {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-} */
+.articlevotes__button-upvote {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Permanent Marker", cursive;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: 0.75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.articlevotes__button-upvote:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+}
+
+.articlevotes__button-upvote:focus {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
+  transform: translate3d(0, 2px, 0);
+  background-color: green;
+}
+
+.articlevotes__button-downvote {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Permanent Marker", cursive;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: 0.75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.articlevotes__button-downvote:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+}
+
+.articlevotes__button-downvote:focus {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
+  transform: translate3d(0, 2px, 0);
+  background-color: red;
+}
 
 .commentsbutton__child {
   grid-area: 5 / 3 / 6 / 4;
@@ -187,3 +283,239 @@ li {
   grid-area: 4 / 1 / 5 / 3;
   font-family: "Play", sans-serif;
 }
+/* ARTICLE */
+
+/* DROPDOWN */
+.sortby_dropdown {
+  margin-top: 10px;
+}
+
+.dropdown_1 {
+  font-family: "Permanent Marker", cursive;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown_2 {
+  font-family: "Permanent Marker", cursive;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* DROPDOWN */
+
+/* COMMENTS */
+.post_comment_section {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.add_comment_button {
+  grid-area: 1 / 1 / 2 / 2;
+  margin-left: 400px;
+  margin-right: 400px;
+}
+
+.comment_box {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.post_comment_button {
+  position: relative;
+  bottom: 48px;
+  left: 10px;
+}
+
+.comment_info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  background-color: rgb(213, 162, 239);
+}
+
+.articlecomments__comment_author {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.articlecomments__comment_body {
+  grid-area: 2 / 1 / 3 / 4;
+}
+
+.articlecomments__comment_votes {
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+.articlecomments__comment_created_at {
+  grid-area: 3 / 3 / 4 / 4;
+}
+
+.delete_comment {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Permanent Marker", cursive;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: 0.75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  grid-area: 3 / 2 / 4 / 3;
+}
+
+.delete_comment:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+}
+
+.delete_comment:focus {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
+  transform: translate3d(0, 2px, 0);
+}
+/* COMMENTS */
+
+/* BUTTONS */
+.universalbutton {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Permanent Marker", cursive;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: 0.75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.universalbutton:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+}
+
+.universalbutton:focus {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.add_comment_button {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Permanent Marker", cursive;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: 0.75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  margin-top: 20px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.add_comment_button:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+}
+
+.add_comment_button:focus {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.post_comment_button {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Permanent Marker", cursive;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: 0.75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.post_comment_button:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+}
+
+.post_comment_button:focus {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
+  transform: translate3d(0, 2px, 0);
+}
+
+/* BUTTONS */

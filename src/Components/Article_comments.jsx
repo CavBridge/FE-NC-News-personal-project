@@ -68,17 +68,14 @@ const ArticleComments = ({ backendComments, setBackendComments }) => {
     return (
       <>
         <div className="commentsbutton__parent">
-          <button
-            className="commentsbutton__child"
-            onClick={handleShowComments}
-          >
+          <button className="universalbutton" onClick={handleShowComments}>
             Comments
           </button>
           {showComments && (
-            <div className="articlecomments">
+            <div className="article_comments">
               {backendComments.map((articleComment) => {
                 return (
-                  <li key={articleComment.comment_id}>
+                  <li className="comment_info" key={articleComment.comment_id}>
                     <p className="articlecomments__comment_author">
                       {" "}
                       Author :{articleComment.author}
@@ -96,6 +93,7 @@ const ArticleComments = ({ backendComments, setBackendComments }) => {
                     </p>
                     {articleComment.author === "tickle122" && (
                       <button
+                        className="delete_comment"
                         onClick={() => {
                           handleDeleteClicked(articleComment.comment_id);
                         }}

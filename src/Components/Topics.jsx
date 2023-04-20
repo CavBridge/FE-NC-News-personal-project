@@ -23,7 +23,7 @@ const Topics = () => {
           <ul>
             {articlesByTopic.map((article) => {
               return (
-                <li key={article.article_id}>
+                <li className="related_articles" key={article.article_id}>
                   <Link
                     className="link_article"
                     to={`/article/${article.article_id}`}

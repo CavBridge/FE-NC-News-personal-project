@@ -19,7 +19,7 @@ const Homepage = () => {
 
   const ArticleList = articles.map((article) => {
     return (
-      <li key={article.article_id}>
+      <li className="unique_article" key={article.article_id}>
         <Link className="link_article" to={`/article/${article.article_id}`}>
           <h2 className="article__article_title">{article.title}</h2>
         </Link>

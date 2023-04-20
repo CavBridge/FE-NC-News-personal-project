@@ -41,9 +41,6 @@ const Article = () => {
           <CommentCount
             comment_count={article.comment_count + newCommentsAdded}
           />
-          {/* <h3 className="article__single_article_comment_count">
-            Comment count: {article.comment_count}
-          </h3> */}
           <UpvoteDownvoteButtons votes={article.votes} />
         </div>
         <AddComment
