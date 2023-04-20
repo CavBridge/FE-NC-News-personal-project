@@ -4,17 +4,13 @@ const TopicsButton = () => {
   return (
     <div className="topicarticles__buton--parent">
       <Link to="/articles/coding">
-        <button className="topicarticles__button--child-coding">Coding</button>
+        <button className="universalbutton">Coding</button>
       </Link>
       <Link to="articles/football">
-        <button className="topicarticles__button--child-football">
-          Football
-        </button>
+        <button className="universalbutton">Football</button>
       </Link>
       <Link to="articles/cooking">
-        <button className="topicarticles__button--child-cooking">
-          Cooking
-        </button>
+        <button className="universalbutton">Cooking</button>
       </Link>
     </div>
   );
